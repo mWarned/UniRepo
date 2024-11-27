@@ -13,7 +13,7 @@ input_values() {
     echo "Input data:"
     cat $filename
 
-    ./ex4_1 < $filename
+    ./ex2_1 < $filename
 }
 
 # First input set
