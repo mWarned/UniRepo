@@ -1,5 +1,5 @@
-#ifndef LAB9_H_
-#define LAB9_H_
+#ifndef LAB10_H_
+#define LAB10_H_
 
 /*
  * Exercitiul 3.1
@@ -14,5 +14,5 @@ void citirePolinom(POLINOM *polinom);
 void afisarePolinom(const POLINOM *polinom);
 double horner(const POLINOM *polinom, double z);
 
-#endif // !LAB9_H_
+#endif // !LAB10_H_
 
