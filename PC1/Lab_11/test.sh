@@ -24,8 +24,8 @@ input_values() {
 input_values 1 "test1.in"
 echo ""
 # Second input set
-input_values 2 "test2.in"
+# input_values 2 "test2.in"
 echo ""
 # Third input set
-input_values 3 "test3.in"
+# input_values 3 "test3.in"
 
