@@ -1,0 +1,90 @@
+(ExpressProject "Lab1CEA"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\lab1cea.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs"
+    (File ".\lab1cea-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lab1cea-pspicefiles\schematic1\caracterstica_statica_diode.sim"
+        (DisplayName "SCHEMATIC1-Caracterstica_Statica_Diode")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\lab1cea-pspicefiles\schematic1\simulare.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lab1cea-pspicefiles\schematic1\simulare.sim"
+        (DisplayName "SCHEMATIC1-simulare")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (VSIN
+      (FullPartName "VSIN.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (D1N4007
+      (FullPartName "D1N4007.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (IDC
+      (FullPartName "IDC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0")))
+  (MPSSessionName "vboxuser")
+  (LastUsedLibraryBrowseDirectory
+     "C:\Cadence\SPB_17.2\tools\capture\library\pspice")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Outputs"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 369"))
+      (Tab 0))
+    (Doc
+      (Type "TextFile")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 78 1446 78 486"))
+      (Path
+         "C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\SCHEMATIC1.net")
+      (Scroll "0"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -31 52 1714 52 460")
+        (Scroll "0 40")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path "C:\USERS\VBOXUSER\DOCUMENTS\GITHUB\UNIREPO\CEA\LAB1CEA.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))

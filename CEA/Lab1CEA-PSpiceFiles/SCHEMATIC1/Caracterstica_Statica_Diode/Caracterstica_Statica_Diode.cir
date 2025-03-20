@@ -1,0 +1,19 @@
+** Profile: "SCHEMATIC1-Caracterstica_Statica_Diode"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\Caracterstica_Statica_Diode.sim ] 
+
+** Creating circuit file "Caracterstica_Statica_Diode.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN I_I1 0 1A 0.01 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

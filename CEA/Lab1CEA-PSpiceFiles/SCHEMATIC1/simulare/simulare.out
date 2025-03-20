@@ -1,0 +1,113 @@
+
+**** 03/20/25 15:27:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\simulare.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "simulare.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.06s 0 2us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB1CEA
+D_D1         1 2 D1N4007 
+V_V1         1 0  
++SIN 0 2V 50Hz 0 0 0
+R_R1         0 2  1k TC=0,0 
+C_C1         0 2  1000uF  TC=0,0 
+
+**** RESUMING simulare.cir ****
+.END
+
+**** 03/20/25 15:27:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\simulare.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4007         D1N4001         
+          IS   14.110000E-09   14.110000E-09 
+           N    1.984           1.984        
+         IKF   94.81           94.81         
+          BV    1.500000E+03   75            
+         IBV   10.000000E-06   10.000000E-06 
+          RS     .03389          .03389      
+          TT    5.700000E-06    5.700000E-06 
+         CJO   25.890000E-12   25.890000E-12 
+          VJ     .3245           .3245       
+           M     .44             .44         
+
+
+**** 03/20/25 15:27:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\simulare.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)-24.23E-21  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         2.423E-23
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/20/25 15:27:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\simulare.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .56
+

@@ -1,0 +1,6 @@
+* source LAB1CEA
+D_D1         1 2 D1N4007 
+V_V1         1 0  
++SIN 0 2V 50Hz 0 0 0
+R_R1         0 2  1k TC=0,0 
+C_C1         0 2  1000uF  TC=0,0 
