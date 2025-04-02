@@ -82,7 +82,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 2 3 -1 -1 -8 -31 52 1714 52 460")
-        (Scroll "0 40")
+        (Scroll "0 60")
         (Zoom "200")
         (Occurrence "/"))
       (Path "C:\USERS\VBOXUSER\DOCUMENTS\GITHUB\UNIREPO\CEA\LAB1CEA.DSN")

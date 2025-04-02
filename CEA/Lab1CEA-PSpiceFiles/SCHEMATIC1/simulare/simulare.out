@@ -1,7 +1,7 @@
-
-**** 03/20/25 15:27:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\simulare.sim ] 
+**** 04/02/25 12:02:33 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\lab1cea-pspicefiles\schematic1\simulare.sim ] 
 
 
  ****     CIRCUIT DESCRIPTION
@@ -40,9 +40,9 @@ C_C1         0 2  1000uF  TC=0,0
 **** RESUMING simulare.cir ****
 .END
 
-**** 03/20/25 15:27:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/02/25 12:02:33 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\simulare.sim ] 
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\lab1cea-pspicefiles\schematic1\simulare.sim ] 
 
 
  ****     Diode MODEL PARAMETERS
@@ -66,9 +66,9 @@ C_C1         0 2  1000uF  TC=0,0
            M     .44             .44         
 
 
-**** 03/20/25 15:27:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/02/25 12:02:33 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\simulare.sim ] 
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\lab1cea-pspicefiles\schematic1\simulare.sim ] 
 
 
  ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
@@ -97,9 +97,9 @@ C_C1         0 2  1000uF  TC=0,0
 
           JOB CONCLUDED
 
-**** 03/20/25 15:27:03 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 04/02/25 12:02:33 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab1CEA-PSpiceFiles\SCHEMATIC1\simulare.sim ] 
+ ** Profile: "SCHEMATIC1-simulare"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\lab1cea-pspicefiles\schematic1\simulare.sim ] 
 
 
  ****     JOB STATISTICS SUMMARY
@@ -109,5 +109,5 @@ C_C1         0 2  1000uF  TC=0,0
 
 
 
-  Total job time (using Solver 1)   =         .56
+  Total job time (using Solver 1)   =         .70
 
