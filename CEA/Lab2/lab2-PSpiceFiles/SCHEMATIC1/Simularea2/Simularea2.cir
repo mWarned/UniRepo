@@ -1,0 +1,20 @@
+** Profile: "SCHEMATIC1-Simularea2"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab2\lab2-PSpiceFiles\SCHEMATIC1\Simularea2.sim ] 
+
+** Creating circuit file "Simularea2.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN V_V2 0 10 0.001 
++ V_V1 LIST 0.7 0.75 0.8 0.85 0.9 0.95 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END
