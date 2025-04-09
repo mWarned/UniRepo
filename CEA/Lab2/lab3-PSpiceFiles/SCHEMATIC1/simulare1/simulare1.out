@@ -1,0 +1,187 @@
+
+**** 04/08/25 12:47:13 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare1"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab2\lab3-PSpiceFiles\SCHEMATIC1\simulare1.sim 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "simulare1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.OP
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB3
+R_R1         0 N00259  1.4k TC=0,0 
+R_R2         0 N00248  8.6k TC=0,0 
+R_R3         N00227 N00634  2.6k TC=0,0 
+R_R4         N00201 N00634  72k TC=0,0 
+R_R5         0 N00201  24k TC=0,0 
+Q_Q1         N00227 N00201 N00259 BC107A 
+C_C1         N00259 0  10u  TC=0,0 
+C_C2         N00227 N00248  10u  TC=0,0 
+C_C3         N00756 N00201  10u  TC=0,0 
+V_V1         N00634 0 12Vdc
+V_V2         N00756 0  AC 1
++SIN 0 10m 10k 0 0 0
+
+**** RESUMING simulare1.cir ****
+.END
+
+**** 04/08/25 12:47:13 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare1"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab2\lab3-PSpiceFiles\SCHEMATIC1\simulare1.sim 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               BC107A          
+               NPN             
+       LEVEL    1            
+          IS    7.049000E-15 
+          BF  375.5          
+          NF    1            
+         VAF  116.3          
+         IKF    4.589        
+         ISE    7.049000E-15 
+          NE    1.281        
+          BR    2.611        
+          NR    1            
+         IKR    5.313        
+         ISC  121.700000E-12 
+          NC    1.865        
+         ISS    0            
+          RE    0            
+          RC    1.464        
+         CJE   11.500000E-12 
+         VJE     .5          
+         MJE     .2717       
+         CJC    5.380000E-12 
+         VJC     .6218       
+         MJC     .329        
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TF  451.000000E-12 
+         XTF   17.43         
+         VTF   10            
+         ITF    6.194        
+          TR   10.000000E-09 
+         XTB    1.5          
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 04/08/25 12:47:13 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare1"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab2\lab3-PSpiceFiles\SCHEMATIC1\simulare1.sim 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00201)    2.8421 (N00227)    7.9968 (N00248)    0.0000 (N00259)    2.1679     
+
+(N00634)   12.0000 (N00756)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.667E-03
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   2.00E-02  WATTS
+
+
+**** 04/08/25 12:47:13 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare1"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab2\lab3-PSpiceFiles\SCHEMATIC1\simulare1.sim 
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1      
+MODEL        BC107A    
+IB           8.77E-06 
+IC           1.54E-03 
+VBE          6.74E-01 
+VBC         -5.15E+00 
+VCE          5.83E+00 
+BETADC       1.75E+02 
+GM           5.95E-02 
+RPI          3.35E+03 
+RX           0.00E+00 
+RO           7.89E+04 
+CBE          4.71E-11 
+CBC          2.58E-12 
+CJS          0.00E+00 
+BETAAC       2.00E+02 
+CBX/CBX2     0.00E+00 
+FT/FT2       1.91E+08 
+
+
+
+          JOB CONCLUDED
+
+**** 04/08/25 12:47:13 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-simulare1"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab2\lab3-PSpiceFiles\SCHEMATIC1\simulare1.sim 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .05
+

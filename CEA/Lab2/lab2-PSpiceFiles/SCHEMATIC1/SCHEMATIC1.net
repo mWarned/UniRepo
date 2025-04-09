@@ -1,0 +1,4 @@
+* source LAB2
+Q_Q2         VOUT VIN 0 Q2N2222
+V_V1         VIN 0 3Vdc
+V_V2         VOUT 0 10Vdc
