@@ -14,9 +14,5 @@ void StudentAC::modificareNota(int nouaNota){
 }
 
 bool StudentAC::operator<(StudentAC stud){
-  if (nota < stud.nota) {
-    return true;
-  } else {
-    return false;
-  }
+  return nota < student.nota;
 }
