@@ -1,0 +1,204 @@
+
+**** 05/15/25 15:06:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-AnalizaBiasPoint"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab6MOSFET\Lab6MOSFET-PSpiceFiles\SCHEMA
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AnalizaBiasPoint.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.OP
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB6MOSFET
+X_M1         N00143 N00138 0 M2N7000/ZTX 
+V_V1         N00143 0 10Vdc
+V_V2         N00138 0 4Vdc
+
+**** RESUMING AnalizaBiasPoint.cir ****
+.END
+
+**** 05/15/25 15:06:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-AnalizaBiasPoint"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab6MOSFET\Lab6MOSFET-PSpiceFiles\SCHEMA
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.DIODE1     
+          IS  125.400000E-15 
+           N    1.0207       
+          RS     .222        
+
+
+**** 05/15/25 15:06:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-AnalizaBiasPoint"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab6MOSFET\Lab6MOSFET-PSpiceFiles\SCHEMA
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.MOD1       
+               NMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    2.474        
+          KP     .296        
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA  267.000000E-06 
+          RS    1.68         
+          IS    1.000000E-15 
+          JS    0            
+          PB    1            
+        PBSW    1            
+         CBD   53.500000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 05/15/25 15:06:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-AnalizaBiasPoint"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab6MOSFET\Lab6MOSFET-PSpiceFiles\SCHEMA
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00138)    4.0000 (N00143)   10.0000 (X_M1.2)    4.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.064E-01
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   2.06E+00  WATTS
+
+
+**** 05/15/25 15:06:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-AnalizaBiasPoint"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab6MOSFET\Lab6MOSFET-PSpiceFiles\SCHEMA
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         X_M1.D1               
+MODEL        X_M1.DIODE1           
+ID          -1.01E-11             
+VD          -1.00E+01             
+REQ          1.00E+12             
+CAP          0.00E+00             
+
+
+**** MOSFETS
+
+
+NAME         X_M1.M1   
+MODEL        X_M1.MOD1 
+ID           2.06E-01 
+VGS          4.00E+00 
+VDS          1.00E+01 
+VBS          0.00E+00 
+VTH          2.47E+00 
+VDSAT        1.18E+00 
+Lin0/Sat1   -1.00E+00 
+if          -1.00E+00 
+ir          -1.00E+00 
+TAU         -1.00E+00 
+GM           3.50E-01 
+GDS          5.50E-05 
+GMB          0.00E+00 
+CBD          1.61E-11 
+CBS          0.00E+00 
+CGSOV        0.00E+00 
+CGDOV        0.00E+00 
+CGBOV        0.00E+00 
+CGS          0.00E+00 
+CGD          0.00E+00 
+CGB          0.00E+00 
+
+          JOB CONCLUDED
+
+**** 05/15/25 15:06:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-AnalizaBiasPoint"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab6MOSFET\Lab6MOSFET-PSpiceFiles\SCHEMA
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .05
+

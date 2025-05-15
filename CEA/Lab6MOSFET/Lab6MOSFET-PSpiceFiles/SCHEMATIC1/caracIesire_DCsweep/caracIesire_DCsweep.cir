@@ -1,0 +1,19 @@
+** Profile: "SCHEMATIC1-caracIesire_DCsweep"  [ C:\Users\vboxuser\Documents\GitHub\UniRepo\CEA\Lab6MOSFET\Lab6MOSFET-PSpiceFiles\SCHEMATIC1\caracIesire_DCsweep.sim ] 
+
+** Creating circuit file "caracIesire_DCsweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN V_V2 0 4 .001 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

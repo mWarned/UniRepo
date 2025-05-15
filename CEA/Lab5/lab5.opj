@@ -38,23 +38,14 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Outputs"))
+      (Path "Outputs")
+      (Select "Design Resources"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 408"))
-      (Tab 0))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 2 3 -1 -1 -8 -31 52 1688 52 503")
-        (Scroll "129 499")
-        (Zoom "200")
-        (Occurrence "/"))
-      (Path "C:\USERS\VBOXUSER\DOCUMENTS\GITHUB\UNIREPO\CEA\LAB5\LAB5.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "PAGE1")))
+        (Placement "44 2 3 -1 -1 -8 -31 0 200 0 408"))
+      (Tab 0)))
   (PartMRUSelector
     (VSIN
       (FullPartName "VSIN.Normal")
