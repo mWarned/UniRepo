@@ -1,0 +1,8 @@
+* source LAB5
+X_U1         5 1 2 3 4 uA741
+V_V1         2 0 10Vdc
+V_V2         0 3 10Vdc
+R_R2         0 5  2k TC=0,0 
+R_R3         5 4  8k TC=0,0 
+V_V3         1 0  AC 1
++SIN 0 3 100 0 0 0

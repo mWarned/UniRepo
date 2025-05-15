@@ -1,0 +1,46 @@
+
+**** 05/14/25 23:44:37 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Analiza2"  [ c:\users\vboxuser\documents\github\unirepo\cea\lab5\lab5-pspicefiles\schematic1\analiza2.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Analiza2.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN V5 -4 4 0.001 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB5
+X_U1         5 1 2 3 4 uA741
+V_V1         2 0 10Vdc
+V_V2         0 3 10Vdc
+R_R2         0 5  2k TC=0,0 
+R_R3         5 4  8k TC=0,0 
+V_V3         1 0  AC 1
++SIN 0 3 100 0 0 0
+
+**** RESUMING Analiza2.cir ****
+.END
+
+ERROR(ORPSIM-15090): DC device V5 is undefined
+
