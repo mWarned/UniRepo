@@ -1,0 +1,4 @@
+* source LAB6MOSFET
+X_M1         2 1 0 M2N7000/ZTX 
+V_V1         2 0 10Vdc
+V_V2         1 0 4Vdc
