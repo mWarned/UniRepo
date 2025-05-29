@@ -1,0 +1,46 @@
+
+**** 05/29/25 02:06:05 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-TD_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\exam_ex5-PSpiceFiles\SCHEMATIC1\TD_eval.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "TD_eval.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\mihai\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 5ms 0 0.1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source EXAM_EX5
+X_U1         0 N00748 1 2 3 uA741
+V_V2         0 2 10Vdc
+V_V3         0 0  AC 1
++SIN 0 0.3 1k 0 0 0
+R_R1         0 N00748  1k TC=0,0 
+R_R2         N00748 3  20k TC=0,0 
+V_V1         1 0 10Vdc
+
+**** RESUMING TD_eval.cir ****
+.END
+
+ERROR(ORPSIM-15143): Voltage source and/or inductor loop involving V_V3. You may break the loop by adding a series resistance
+
