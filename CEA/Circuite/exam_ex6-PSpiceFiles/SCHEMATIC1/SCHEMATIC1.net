@@ -1,0 +1,8 @@
+* source EXAM_EX6
+R_R1         N01295 N01303  1k TC=0,0 
+X_U1         0 N01303 1 2 3 uA741
+V_V2         0 2 10Vdc
+V_V1         1 0 10Vdc
+C_C1         N01303 3  100n  TC=0,0 
+V_V4         N01295 0  AC 1
++SIN 0 1 100 0 0 0

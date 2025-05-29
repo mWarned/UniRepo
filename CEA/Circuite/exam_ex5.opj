@@ -1,0 +1,53 @@
+(ExpressProject "exam_ex5"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\exam_ex5.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs"
+    (File ".\exam_ex5-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\exam_ex5-pspicefiles\schematic1\td_eval.sim"
+        (DisplayName "SCHEMATIC1-TD_eval")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\exam_ex5-pspicefiles\schematic1\acs_eval.sim"
+        (DisplayName "SCHEMATIC1-ACS_eval")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\exam_ex5-pspicefiles\schematic1\td_eval.sim"))
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector)
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Outputs"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 0 200 0 412"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 130 1472 130 581")
+        (Scroll "210 442")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path "C:\GITHUB\UNIREPO\CEA\CIRCUITE\EXAM_EX5.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))
