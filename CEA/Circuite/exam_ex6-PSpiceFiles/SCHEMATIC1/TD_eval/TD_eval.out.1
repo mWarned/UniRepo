@@ -1,0 +1,54 @@
+
+**** 05/29/25 03:10:06 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-TD_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\exam_ex6-PSpiceFiles\SCHEMATIC1\TD_eval.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "TD_eval.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\mihai\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.2 0 0.1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source EXAM_EX6
+R_R1         N01295 N01303  1k TC=0,0 
+X_U1         0 N01303 1 2 3 uA741
+V_V2         0 2 10Vdc
+V_V1         1 0 10Vdc
+C_C1         N01303 3  100n  TC=0,0 
+V_V3         M_UN0001 M_UN0002  
++PULSE -100m 100m 0 50m 50m 0 100m
+V_V4         N01295 0  AC 1
++SIN 0 1 100 0 0 0
+
+**** RESUMING TD_eval.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node M_UN0001.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node M_UN0002.
+
+ERROR(ORPSIM-15142): Node M_UN0001 is floating
+
+ERROR(ORPSIM-15142): Node M_UN0002 is floating
+

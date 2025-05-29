@@ -1,0 +1,108 @@
+
+**** 05/29/25 00:06:59 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DCSweep_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex2-PSpiceFiles\SCHEMATIC1\DCSweep_eval.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DCSweep_eval.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\mihai\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN V_V2 0 6 0.01 
++ LIN V_V1 0.65 0.73 0.01 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TEST_EX2
+Q_Q1         1 2 0 Q40236
+V_V2         1 0 6Vdc
+V_V1         2 0 0.7Vdc
+
+**** RESUMING DCSweep_eval.cir ****
+.END
+
+**** 05/29/25 00:06:59 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DCSweep_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex2-PSpiceFiles\SCHEMATIC1\DCSweep_eval.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q40236          
+               NPN             
+       LEVEL    1            
+          IS   69.280000E-18 
+          BF  308.6          
+          NF    1            
+         VAF  100            
+         IKF     .02283      
+         ISE   69.280000E-18 
+          NE    1.197        
+          BR    1.11         
+          NR    1            
+         ISS    0            
+          RB   10            
+          RE    0            
+          RC    4            
+         CJE  939.800000E-15 
+         VJE     .75         
+         MJE     .3453       
+         CJC  893.100000E-15 
+         VJC     .75         
+         MJC     .3017       
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TF  141.200000E-12 
+         XTF   30            
+         VTF   10            
+         ITF     .27         
+          TR    1.558000E-09 
+         XTB    1.5          
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+
+          JOB CONCLUDED
+
+**** 05/29/25 00:06:59 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DCSweep_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex2-PSpiceFiles\SCHEMATIC1\DCSweep_eval.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .23
+
