@@ -1,0 +1,8 @@
+* source EXAM_EX5
+X_U1         0 N00748 1 2 3 uA741
+V_V2         0 2 10Vdc
+V_V3         N00740 0  AC 1
++SIN 0 1 1k 0 0 0
+R_R1         N00740 N00748  1k TC=0,0 
+R_R2         N00748 3  20k TC=0,0 
+V_V1         1 0 10Vdc
