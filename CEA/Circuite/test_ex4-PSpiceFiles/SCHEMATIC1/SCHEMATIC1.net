@@ -1,0 +1,8 @@
+* source TEST_EX4
+X_U1         N00323 N00387 N00161 N00173 N00375 uA741
+V_V2         0 N00173 10Vdc
+V_V1         N00161 0 10Vdc
+V_V3         N00323 0  AC 1
++SIN 0 0.4875 100k 0 0 0
+R_R1         0 N00387  1k TC=0,0 
+R_R2         N00387 N00375  19k TC=0,0 

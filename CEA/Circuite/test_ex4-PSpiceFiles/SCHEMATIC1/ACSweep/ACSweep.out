@@ -1,0 +1,168 @@
+
+**** 05/29/25 01:36:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ACSweep"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex4-PSpiceFiles\SCHEMATIC1\ACSweep.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "ACSweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\mihai\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.AC DEC 1000 1 10meg
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TEST_EX4
+X_U1         N00323 N00387 N00161 N00173 N00375 uA741
+V_V2         0 N00173 10Vdc
+V_V1         N00161 0 10Vdc
+V_V3         N00323 0  AC 1
++SIN 0 0.4875 100k 0 0 0
+R_R1         0 N00387  1k TC=0,0 
+R_R2         N00387 N00375  19k TC=0,0 
+
+**** RESUMING ACSweep.cir ****
+.END
+
+**** 05/29/25 01:36:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ACSweep"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex4-PSpiceFiles\SCHEMATIC1\ACSweep.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.dx         X_U1.dy         
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 05/29/25 01:36:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ACSweep"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex4-PSpiceFiles\SCHEMATIC1\ACSweep.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qx         
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 05/29/25 01:36:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ACSweep"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex4-PSpiceFiles\SCHEMATIC1\ACSweep.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00161)   10.0000 (N00173)  -10.0000 (N00323)    0.0000 (N00375)     .0019     
+
+(N00387) 19.24E-06 (X_U1.6)-180.9E-09 (X_U1.7)     .0019 (X_U1.8)     .0019     
+
+(X_U1.9)    0.0000 (X_U1.10)    -.6077                   (X_U1.11)    9.9603    
+
+(X_U1.12)    9.9603                   (X_U1.13)    -.5938                       
+
+(X_U1.14)    -.5938                   (X_U1.53)    9.0000                       
+
+(X_U1.54)   -9.0000                   (X_U1.90) 99.01E-06                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -1.116E-03
+    V_V1        -1.116E-03
+    V_V3        -7.973E-08
+    X_U1.vb     -1.809E-12
+    X_U1.vc      8.999E-12
+    X_U1.ve      1.023E-11
+    X_U1.vlim    9.901E-08
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   2.23E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 05/29/25 01:36:34 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-ACSweep"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex4-PSpiceFiles\SCHEMATIC1\ACSweep.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .17
+

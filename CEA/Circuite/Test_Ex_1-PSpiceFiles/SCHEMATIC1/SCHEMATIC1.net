@@ -1,0 +1,6 @@
+* source TEST_EX_1
+Q_Q1         1 2 0 Q40236
+R_R1         1 N00225  1k TC=0,0 
+R_R2         N00170 2  10k TC=0,0 
+V_V1         N00225 0 6Vdc
+V_V2         N00170 0 1Vdc

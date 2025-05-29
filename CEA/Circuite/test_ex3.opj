@@ -1,0 +1,59 @@
+(ExpressProject "test_ex3"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\test_ex3.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs"
+    (File ".\test_ex3-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\test_ex3-pspicefiles\schematic1\timedomain_eval.sim"
+        (DisplayName "SCHEMATIC1-TimeDomain_eval")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\test_ex3-pspicefiles\schematic1\acsweep_evall.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\test_ex3-pspicefiles\schematic1\acsweep_evall.sim"
+        (DisplayName "SCHEMATIC1-ACSWeep_evall")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (MPSSessionName "mihai")
+  (PartMRUSelector)
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "C:\GitHub\UniRepo\CEA\Circuite\test_ex3.dsn")
+      (Path "Design Resources" "C:\GitHub\UniRepo\CEA\Circuite\test_ex3.dsn"
+         "SCHEMATIC1")
+      (Path "Outputs")
+      (Select "Design Resources" "C:\GitHub\UniRepo\CEA\Circuite\test_ex3.dsn"
+         "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -8 -31 0 200 0 412"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 78 1714 78 529")
+        (Scroll "64 314")
+        (Zoom "200")
+        (Occurrence "/"))
+      (Path "C:\GITHUB\UNIREPO\CEA\CIRCUITE\TEST_EX3.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))
