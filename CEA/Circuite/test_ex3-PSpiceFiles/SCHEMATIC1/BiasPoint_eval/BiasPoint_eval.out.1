@@ -1,0 +1,185 @@
+
+**** 05/29/25 00:21:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-BiasPoint_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex3-PSpiceFiles\SCHEMATIC1\BiasPoint_eval.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "BiasPoint_eval.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\mihai\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.OP
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TEST_EX3
+Q_Q1         N00329 N00333 N00357 Q40236
+R_R1         0 N00333  24k TC=0,0 
+R_R2         N00333 N00305  72k TC=0,0 
+R_R3         N00329 N00305  2.6k TC=0,0 
+R_R4         0 N00357  1.4k TC=0,0 
+R_R5         0 N00381  8.6k TC=0,0 
+C_C1         N00408 N00333  10u  TC=0,0 
+C_C2         N00329 N00381  10u  TC=0,0 
+C_C3         0 N00357  100u  TC=0,0 
+V_V2         N00408 0  AC 1
++SIN 0 10m 10k 0 0 0
+V_V1         N00305 0 12Vdc
+
+**** RESUMING BiasPoint_eval.cir ****
+.END
+
+**** 05/29/25 00:21:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-BiasPoint_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex3-PSpiceFiles\SCHEMATIC1\BiasPoint_eval.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q40236          
+               NPN             
+       LEVEL    1            
+          IS   69.280000E-18 
+          BF  308.6          
+          NF    1            
+         VAF  100            
+         IKF     .02283      
+         ISE   69.280000E-18 
+          NE    1.197        
+          BR    1.11         
+          NR    1            
+         ISS    0            
+          RB   10            
+          RE    0            
+          RC    4            
+         CJE  939.800000E-15 
+         VJE     .75         
+         MJE     .3453       
+         CJC  893.100000E-15 
+         VJC     .75         
+         MJC     .3017       
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TF  141.200000E-12 
+         XTF   30            
+         VTF   10            
+         ITF     .27         
+          TR    1.558000E-09 
+         XTB    1.5          
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 05/29/25 00:21:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-BiasPoint_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex3-PSpiceFiles\SCHEMATIC1\BiasPoint_eval.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00305)   12.0000 (N00329)    8.3868 (N00333)    2.7569 (N00357)    1.9645     
+
+(N00381)    0.0000 (N00408)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         0.000E+00
+    V_V1        -1.518E-03
+
+    TOTAL POWER DISSIPATION   1.82E-02  WATTS
+
+
+**** 05/29/25 00:21:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-BiasPoint_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex3-PSpiceFiles\SCHEMATIC1\BiasPoint_eval.sim ] 
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1      
+MODEL        Q40236    
+IB           1.35E-05 
+IC           1.39E-03 
+VBE          7.92E-01 
+VBC         -5.63E+00 
+VCE          6.42E+00 
+BETADC       1.03E+02 
+GM           5.09E-02 
+RPI          2.15E+03 
+RX           1.00E+01 
+RO           7.60E+04 
+CBE          8.86E-12 
+CBC          4.68E-13 
+CJS          0.00E+00 
+BETAAC       1.10E+02 
+CBX/CBX2     0.00E+00 
+FT/FT2       8.69E+08 
+
+
+
+          JOB CONCLUDED
+
+**** 05/29/25 00:21:54 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-BiasPoint_eval"  [ C:\GitHub\UniRepo\CEA\Circuite\test_ex3-PSpiceFiles\SCHEMATIC1\BiasPoint_eval.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .06
+
