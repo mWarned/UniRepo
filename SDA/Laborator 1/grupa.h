@@ -1,5 +1,5 @@
-#ifndef _GRUPA_
-#define _GRUPA_
+#ifndef GRUPA_H
+#define GRUPA_H
 
 #include "student.h"
 
@@ -8,8 +8,11 @@ struct Grupa {
     int nr;
     int id;
 };
+
 void InitGrupa (Grupa&);
 void AfisGrupa (Grupa);
 void StergeGrupa (Grupa&);
+void CautaStudent (Grupa&, char*);
+void NotaMinMax (Grupa&);
 
-#endif
+#endif  // GRUPA_H

@@ -6,23 +6,24 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-void InitStudent (Student& s) {
+void InitStudent (Student &s) {
     cout << "Numele studentului - ";
-    char buf[30];
-    cin.getline(buf, 30);
-    s.nume = new char[strlen(buf) - 1];
-    strcpy(s.nume, buf);
+    s.nume = new char[30];
+    cin.ignore();
+    cin.getline(s.nume, 30);
 
     cout << "Nota studentului - ";
-    int nota = 0;
-    cin >> nota;
-    s.nota = nota;
+    cin >> s.nota;
 }
 
 void AfisStudent (Student s) {
     cout << "Studentul " << s.nume << " are nota " << s.nota << endl;
 }
 
-void StergeStudent (Student&) {
-
+void StergeStudent (Student &s) {
+    if (s.nume) {
+      delete[] s.nume;
+    }
+    s.nume = nullptr;
+    s.nota = 0;
 }
