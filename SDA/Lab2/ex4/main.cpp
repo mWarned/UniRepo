@@ -1,40 +1,46 @@
 #include <iostream>
 
+using std::cin;
+using std::cout;
+using std::endl;
+
 int main(){
-  int matrix[5][5];
+    int A[5][5] = {
+      {1,2,3,4,5},
+      {6,7,8,9,13},
+      {11,12,13,14,15},
+      {16,17,18,19,20},
+      {21,22,23,24,25}
+    };
 
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 5; j++) {
-      matrix[i][j] = rand() % 100 + 1;
-    }
-  }
-
-  std::cout << "Matricea:" << std::endl;
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 5; j++) {
-      std::cout << matrix[i][j] << " ";
- }
-    std::cout << std::endl;
-  }
-
-  int xi = 0, xj = 0;
-  if (matrix[0][0] != 91) {
     for (int i = 0; i < 5; i++) {
-      for (int j = 0; j < 5; j++) {
-        if (matrix[i][j] == 91) {
-          xi = i; xj = j;
-          break;
+        for (int j = 0; j < 5; j++) {
+            cout << A[i][j] << ", ";
         }
-      }
+        cout << endl;
     }
-    if (xi == 0 && xj == 0) {
-      std::cout << "Valoarea x nu e in matrice" << std::endl;
-    } else {
-      std::cout << "Valoarea lui x se afla la coordonatele (" << xi << ", " << xj << ")" << std::endl;
+
+    cout << "Valoarea cautata - ";
+    int x;
+    cin >> x;
+    
+    int i = 0, j = 4;
+    bool found = false;
+
+    while (i < 5 && j >= 0) {
+        if (A[i][j] == x) {
+            cout << "Valoarea a fost gasita la i0 = " << i << ", j0 = " << j << endl;
+            found = true;
+            break;
+        } else if (A[i][j] > x) {
+            j--;
+        } else {
+            i++;
+        }
     }
-  } else {
-    std::cout << "Valoarea lui x se afla la coordonatele (0, 0)" << std::endl;
-  }
-  
-  return 0;
+
+    if (!found)
+        cout << "Valoarea nu a fost gasita" << endl;
+
+    return 0;
 }
