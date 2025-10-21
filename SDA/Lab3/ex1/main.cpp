@@ -41,5 +41,7 @@ int main () {
 
     srcKthFromBack(head, x);
 
+    displayBothWays(head);
+
     return 0;
 }

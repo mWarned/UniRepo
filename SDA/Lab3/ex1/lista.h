@@ -16,5 +16,6 @@ bool srcVal(Elem* head, int x);
 void insertOnPos(Elem* head, int val, int pos);
 void deleteOnPos(Elem* head, int pos);
 void srcKthFromBack(Elem* head, int k);
+void displayBothWays(Elem* head);
 
 #endif // LISTA_H

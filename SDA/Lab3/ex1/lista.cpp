@@ -77,3 +77,20 @@ void srcKthFromBack(Elem* head, int k){
 
     std::cout << "Elementul k numarat din spate = " << second->data << std::endl;
 }
+
+void displayBothWays(Elem* head){
+    if (head == nullptr) {
+        std::cout << std::endl;
+        return;
+    }
+
+    std::cout << head->data << " ";
+    displayBothWays(head->next);
+    std::cout << head->data << " ";   
+
+    if (head == nullptr) {
+        std::cout << std::endl;
+        return;
+    }
+}
+
