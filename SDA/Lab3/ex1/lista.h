@@ -5,17 +5,19 @@
 typedef int Atom;
 
 struct Elem{
-    Atom data;
-    Elem* next;
+  Atom data;
+  Elem* next;
 };
 
-void createList(Elem* &head);
-void insertData(Elem* &head, int val);
-void displayList(Elem* head);
-bool srcVal(Elem* head, int x);
-void insertOnPos(Elem* head, int val, int pos);
-void deleteOnPos(Elem* head, int pos);
-void srcKthFromBack(Elem* head, int k);
-void displayBothWays(Elem* head);
+void createList(Elem*&);
+void deleteList(Elem*&);
+void insertData(Elem*&, int);
+void displayList(Elem*);
+bool srcVal(Elem*, int);
+void insertOnPos(Elem*, int, int);
+void deleteOnPos(Elem*, int);
+void srcKthFromBack(Elem*, int);
+void displayBothWays(Elem*);
+bool checkLoop(Elem*);
 
 #endif // LISTA_H
