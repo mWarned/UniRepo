@@ -49,26 +49,47 @@ bool srcVal(Elem* head, int x){
   return found;
 }
 
-void insertOnPos(Elem* head, int val, int pos){
-  Elem* prevPos = head;
-  for (int i = 0; i < pos - 1; i++) {
-    prevPos = prevPos->next;
-  }
-  Elem* ins;
-  ins->data = val;
-  ins->next = prevPos->next;
-  prevPos->next = ins;
+void insertOnPos(Elem*& head, int val, int pos) {
+    if (pos < 0) return;
+    if (pos == 0) {
+        insertData(head, val);
+        return;
+    }
+
+    Elem* prev = head;
+    for (int i = 0; i < pos - 1; ++i) {
+        if (!prev) return;
+        prev = prev->next;
+    }
+    if (!prev) return;
+
+    Elem* ins = new Elem;
+    ins->data = val;
+    ins->next = prev->next;
+    prev->next = ins;
 }
 
-void deleteOnPos(Elem* head, int pos){
-  Elem* prevPos = head;
-  for (int i = 0; i < pos - 1; i++) {
-    prevPos = prevPos->next;
-  }
-  Elem* tmp = prevPos->next;
-  Elem* nextPos = (prevPos->next)->next;
-  prevPos->next = nextPos;
-  delete tmp;
+bool deleteOnPos(Elem*& head, int pos) {
+    if (!head || pos < 0) return false;
+
+    if (pos == 0) {
+        Elem* tmp = head;
+        head = head->next;
+        delete tmp;
+        return true;
+    }
+
+    Elem* prev = head;
+    for (int i = 0; i < pos - 1; ++i) {
+        if (!prev->next) return false;
+        prev = prev->next;
+    }
+    if (!prev->next) return false;
+
+    Elem* tmp = prev->next;
+    prev->next = tmp->next;
+    delete tmp;
+    return true;
 }
 
 void srcKthFromBack(Elem* head, int k){
@@ -106,15 +127,51 @@ bool checkLoop(Elem* head){
   Elem* fast = head;
   Elem* slow = head;
 
-  do {
+  while (fast->next->next != nullptr && slow != nullptr) {
     slow = slow->next;
     fast = fast->next->next;
 
     if (slow == fast) {
       return true;
+    } 
+    if(fast->next == nullptr) {
+      return false;
     }
-  } while (fast != nullptr && slow != nullptr || fast->next == nullptr); 
+  }
 
   return false;
+}
+
+void findMiddle(Elem* head) {
+  Elem* slow = head;
+  Elem* fast = head;
+
+  while(fast->next != nullptr && fast->next->next != nullptr) {
+    slow = slow->next;
+    fast = fast->next->next;
+
+    if (fast->next == nullptr) {
+      std::cout << "Mijlocul listei este - " << slow->data << std::endl;
+    } else if (fast->next->next == nullptr) {
+      std::cout << "Mijlocul listei este - " << slow->data << " si " << slow->next->data << std::endl;
+    }
+  }
+}
+
+void reverseList(Elem* &head) {
+  if (head == nullptr && head->next == nullptr) return;
+
+  Elem* newhead = head->next;
+  head->next = nullptr;
+
+  while(newhead->next){
+    Elem* tmp = newhead->next;
+    newhead->next = head;
+    head = newhead;
+    newhead = tmp;
+  }
+
+  newhead->next = head;
+  head = newhead;
 }
 

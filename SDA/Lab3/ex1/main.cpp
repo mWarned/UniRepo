@@ -32,7 +32,11 @@ int main () {
   std::cout << "Introduceti pozitia care doriti sa o stergeti - ";
   std::cin >> pos;
 
-  deleteOnPos(head, pos);
+  if(deleteOnPos(head, pos)){
+    std::cout << "Valoarea a fost stearsa!" << std::endl;
+  } else {
+    std::cout << "Nu am putut sterge valoarea!" << std::endl;
+  }
 
   displayList(head);
 
@@ -52,26 +56,28 @@ int main () {
   }
 
   // Crearea unei bucle pentru verificare
-  Elem* posVar = head;
-  Elem* restoration = nullptr;
-  for (int i = 0; i < 3; i++) {
-    posVar = posVar->next;
-  }
+  // Elem* posVar = head;
+  // Elem* restoration = nullptr;
+  // for (int i = 0; i < 3; i++) {
+  //   posVar = posVar->next;
+  // }
 
-  restoration = posVar->next;
-  posVar->next = head->next;
+  // restoration = posVar->next;
+  // posVar->next = head->next;
 
-  displayBothWays(head);
-  std::cout << std::endl;
+  // hasLoop = checkLoop(head);
+  // if (hasLoop) {
+  //   std::cout << "Lista are bucla!" << std::endl;
+  // } else {
+  //   std::cout << "Lista nu are bucle!" << std::endl;
+  // }
 
-  hasLoop = checkLoop(head);
-  if (hasLoop) {
-    std::cout << "Lista are bucla!" << std::endl;
-  } else {
-    std::cout << "Lista nu are bucle!" << std::endl;
-  }
+  // posVar->next = restoration;
 
-  posVar->next = restoration;
+  findMiddle(head);
+
+  reverseList(head);
+  displayList(head);
 
   return 0;
 }

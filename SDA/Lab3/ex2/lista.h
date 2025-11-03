@@ -1,19 +1,17 @@
 #pragma once
-#ifndef LISTA_H
-#define LISTA_H
 
 typedef int Atom;
 
 struct Elem{
     Atom data;
     Elem* next;
+    Elem(Atom val, Elem* addr): data(val), next(addr) {}
 };
 
 void createList(Elem* &head);
 void insertData(Elem* &head, int val);
+void deleteList(Elem*&);
 void displayList(Elem* head);
-bool srcVal(Elem* head, int x);
-void insertOnPos(Elem* head, int val, int pos);
-void deleteOnPos(Elem* head, int pos);
-
-#endif // LISTA_H
+void cpyList(Elem*, Elem*&);
+void concat(Elem*, Elem*);
+void interclasare(Elem*&, Elem*, Elem*);
