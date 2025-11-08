@@ -1,19 +1,14 @@
 #pragma once
-
 #include <string>
-
-using std::string;
-using std::cout;
-using std::cin;
-using std::endl;
+#include <iostream>
 
 struct Node {
-    string name;
-    string phone;
+    std::string name;
+    std::string phone;
     Node* next;
 };
 
-void insert(Node* &head, string name, string phone);
-void deletePerson(Node* &head, string name);
-string search(Node* head, string name);
+void insert(Node** head, const std::string& name, const std::string& phone);
+void deletePerson(Node** head, const std::string& name);
+std::string search(Node* head, const std::string& name);
 void display(Node* head);

@@ -1,7 +1,7 @@
 #include <iostream>
-#include <stack>
 #include <string>
 #include <cctype>
+#include "expressions.h"
 
 void pushC(CharStack& top, char value) {
   Stack ins = new Node();
@@ -40,9 +40,9 @@ bool isdigit(char c){
   return false;
 }
 
-string infixToPostfix(const string& infix) {
+std::string infixToPostfix(const string& infix) {
     CharStack s;
-    string postfix = "";
+    std::string postfix = "";
 
     for (char c : infix) {
         if (isdigit(c)) {

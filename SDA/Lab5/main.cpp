@@ -1,6 +1,7 @@
 #include <iostream>
 #include "helper.h"
 #include "stacks.h"
+#include "expressions.h"
 
 using std::cout;
 using std::cin;

@@ -1,12 +1,9 @@
 #include "telefoane.h"
-#include <iostream>
-#include <string>
+#include <limits>
 
-void insert(Node* &head, std::string name, std::string phone) {
-    Node* newNode = new Node;
-    newNode->name = name;
-    newNode->phone = phone;
-    newNode->next = nullptr;
+void insert(Node** head, const std::string& name, const std::string& phone)
+{
+    Node* newNode = new Node{name, phone, nullptr};
 
     if (*head == nullptr || (*head)->name >= name) {
         newNode->next = *head;
@@ -14,55 +11,49 @@ void insert(Node* &head, std::string name, std::string phone) {
         return;
     }
 
-    Node* current = *head;
-    while (current->next != nullptr && current->next->name < name) {
-        current = current->next;
-    }
+    Node* cur = *head;
+    while (cur->next != nullptr && cur->next->name < name)
+        cur = cur->next;
 
-    newNode->next = current->next;
-    current->next = newNode;
+    newNode->next = cur->next;
+    cur->next = newNode;
 }
 
-void deletePerson(Node* &head, std::string name) {
-    Node* temp = *head;
-    Node* prev = nullptr;
+void deletePerson(Node** head, const std::string& name)
+{
+    if (*head == nullptr) return;
 
-    if (temp != nullptr && temp->name == name) {
+    Node* temp = *head;
+    if (temp->name == name) {
         *head = temp->next;
         delete temp;
         return;
     }
 
-    while (temp != nullptr && temp->name != name) {
-        prev = temp;
+    while (temp->next != nullptr && temp->next->name != name)
         temp = temp->next;
-    }
 
-    if (temp == nullptr) return;
+    if (temp->next == nullptr) return;
 
-    prev->next = temp->next;
-    delete temp;
+    Node* toDelete = temp->next;
+    temp->next = toDelete->next;
+    delete toDelete;
 }
 
-std::string search(Node* head, std::string name) {
-    Node* current = head;
-    while (current != nullptr) {
-        if (current->name == name) {
-            return current->phone;
-        }
-        current = current->next;
-    }
-    return "Not found";
+std::string search(Node* head, const std::string& name)
+{
+    for (Node* cur = head; cur != nullptr; cur = cur->next)
+        if (cur->name == name)
+            return cur->phone;
+    return {};
 }
 
-void display(Node* head) {
-    Node* current = head;
-    if (current == nullptr) {
-        std::cout << "Agenda is empty." << std::endl;
+void display(Node* head)
+{
+    if (!head) {
+        std::cout << "Agenda este goala.\n";
         return;
     }
-    while (current != nullptr) {
-        std::cout << "Name: " << current->name << ", Phone: " << current->phone << std::endl;
-        current = current->next;
-    }
+    for (Node* cur = head; cur != nullptr; cur = cur->next)
+        std::cout << "Nume: " << cur->name << ", Telefon: " << cur->phone << '\n';
 }
