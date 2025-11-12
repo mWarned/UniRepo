@@ -1,5 +1,6 @@
 #include <iostream>
 #include "lista.h"
+#include "ex1.h"
 
 int MENU_ex1(){
   int choice = 0;
@@ -38,12 +39,12 @@ void runEx1_3(DLList lista){
   std::cin >> val;
   std::cout << "Dati pozitia pe care doriti sa inserati valoarea - ";
   std::cin >> poz;
-  insertOnPosDLL(lista.first, val, poz);
+  insertOnPosDLL(lista, val, poz);
 }
 
 void runEx1_4(DLList lista){
   int val, poz;
   std::cout << "Dati pozitia pe care doriti sa stergeti valoarea - ";
   std::cin >> poz;
-  deleteOnPosDLL(lista.first, poz);
+  deleteOnPosDLL(lista, poz);
 }

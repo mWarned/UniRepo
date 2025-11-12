@@ -2,6 +2,9 @@
 #include "lista.h"
 #include "ex1.h"
 #include "ex2.h"
+#include "ex3.h"
+#include "ex4.h"
+#include "ex5.h"
 
 using std::cout;
 using std::cin;
@@ -32,7 +35,7 @@ int MENU_main() {
 
 int main() {
   cout << "\033[H\033[J";
- 
+
   int rep = MENU_main();
 
   while (rep) {
@@ -60,6 +63,7 @@ int main() {
           ex1Ch = MENU_ex1();
         }
       }
+      deleteDLL(lista);
       rep = MENU_main();
     } else if (rep == 2) {
       DLList lista1, lista2, lista3;
@@ -70,20 +74,93 @@ int main() {
           runEx2_1(lista1, lista2);
           ex2Ch = MENU_ex2();
         } else if (ex2Ch == 2) {
-          runEx2_2(lista1, lista2, lista3);
+          runEx2_2(lista1, lista2);
+          ex2Ch = MENU_ex2();
+        } else if (ex2Ch == 3) {
+          lista3 = runEx2_3(lista1, lista2);
+          displayDLL(lista3);
+          ex2Ch = MENU_ex2();
+        } else if (ex2Ch == 4) {
+          lista3 = runEx2_4(lista1, lista2);
+          displayDLL(lista3);
           ex2Ch = MENU_ex2();
         } else {
           cout << "\033[1;31mAction number not in menu!\033[0m" << endl;
-          ex2Ch = MENU_ex1();
+          ex2Ch = MENU_ex2();
         }
       }
+      deleteDLL(lista1);
+      deleteDLL(lista2);
+      deleteDLL(lista3);
+      rep = MENU_main();
     } else if (rep == 3) {
       Elem* head = nullptr;
-      
-      createCL(head);
-      displayCL(head);
-      insertDataCL(head, 10);
-      displayCL(head);
+
+      int ex3Ch = MENU_ex3();
+      while (ex3Ch) {
+        if (ex3Ch == 1) {
+          runEx3_1(head);
+          ex3Ch = MENU_ex3();
+        } else if (ex3Ch == 2) {
+          runEx3_2(head);
+          ex3Ch = MENU_ex3();
+        } else if (ex3Ch == 3) {
+          runEx3_3(head);
+          ex3Ch = MENU_ex3();
+        } else {
+          cout << "\033[1;31mAction number not in menu!\033[0m" << endl;
+          ex3Ch = MENU_ex3();
+        }
+      }
+      deleteCL(head);
+      rep = MENU_main();
+    } else if (rep == 4) {
+      Elem* head1 = nullptr;
+      Elem* head2 = nullptr;
+
+      int ex4Ch = MENU_ex4();
+      while (ex4Ch) {
+        if (ex4Ch == 1) {
+          runEx4_1(head1, head2);
+          ex4Ch = MENU_ex4();
+        } else if (ex4Ch == 2) {
+          runEx4_2(head1, head2);
+          ex4Ch = MENU_ex4();
+        } else if (ex4Ch == 3) {
+          runEx4_3(head1, head2);
+          ex4Ch = MENU_ex4();
+        } else if (ex4Ch == 4) {
+          runEx4_4(head1, head2);
+          ex4Ch = MENU_ex4();
+        } else {
+          cout << "\033[1;31mAction number not in menu!\033[0m" << endl;
+          ex4Ch = MENU_ex4();
+        }
+      }
+
+      deleteCL(head1);
+      deleteCL(head2);
+      rep = MENU_main();
+    } else if (rep == 5) {
+
+      int ex5Ch = MENU_ex5();
+      while (ex5Ch) {
+        if (ex5Ch == 1) {
+          ElemS* head = nullptr;
+          createCLS(head);
+          runEx5_1(head);
+          delete head;
+          ex5Ch = MENU_ex5();
+        } else if (ex5Ch == 2){
+
+          ex5Ch = MENU_ex5();
+        } else {
+          cout << "\033[1;31mAction number not in menu!\033[0m" << endl;
+          ex5Ch = MENU_ex5();
+        }
+      }
+
+      rep = MENU_main();
     } else {
       cout << "\033[1;31mAction number not in menu!\033[0m" << endl;
       rep = MENU_main();

@@ -1,146 +1,229 @@
-#include <iostream>
 #include "lista.h"
 
-void createDLL(DLList &lista){
+using namespace std;
+
+void createDLL(DLList& lista) {
+  lista.first = lista.last = nullptr;
   int x;
-  std::cout << "Insert elements until 0 is inserted" << std::endl;
-  std::cin >> x;
+  cout << "Introduce elemente pana la 0:";
+  cin >> x;
   while (x) {
     insertDataDLL(lista, x);
-    std::cin >> x;
+    cin >> x;
   }
 }
 
-void insertDataDLL(DLList &lista, int val){
+void insertDataDLL(DLList& lista, int val) {
   Elem* ins = new Elem();
   ins->data = val;
-  if (lista.first == nullptr) {
-    lista.first = ins;
-    lista.last = ins;
-  } else {
-    ins->next = lista.first;
+  ins->prev = nullptr;
+  ins->next = lista.first;
+
+  if (lista.first) {
     lista.first->prev = ins;
-    lista.first = ins;
+  } else {
+    lista.last = ins;
+  }
+  lista.first = ins;
+}
+
+void displayDLL(const DLList& lista) {
+  if (!lista.first) {
+    cout << "Lista este goala!";
+    return;
+  }
+  for (Elem* p = lista.first; p; p = p->next)
+    cout << p->data << " ";
+  cout << endl;
+}
+
+bool deleteOnPosDLL(DLList& lista, int pos) {
+  if (!lista.first || pos < 0) return false;
+
+  Elem* cur = lista.first;
+  for (int i = 0; i < pos; ++i) {
+    if (!cur) return false;
+    cur = cur->next;
+  }
+  if (!cur) return false;
+
+  if (cur->prev) cur->prev->next = cur->next;
+  else lista.first = cur->next;
+
+  if (cur->next) cur->next->prev = cur->prev;
+  else lista.last = cur->prev;
+
+  delete cur;
+  return true;
+}
+
+void deleteDLL(DLList& lista) {
+  Elem* p = lista.first;
+  while (p) {
+    Elem* temp = p;
+    p = p->next;
+    delete temp;
+  }
+  lista.first = lista.last = nullptr;
+}
+
+void insertOnPosDLL(DLList& lista, int val, int pos) {
+  if (pos < 0) return;
+  if (pos == 0) {
+    insertDataDLL(lista, val);
+    return;
+  }
+
+  Elem* cur = lista.first;
+  for (int i = 0; i < pos - 1; ++i) {
+    if (!cur) return;
+    cur = cur->next;
+  }
+  if (!cur) return;
+
+  Elem* ins = new Elem();
+  ins->data = val;
+  ins->next = cur->next;
+  ins->prev = cur;
+  if (cur->next) cur->next->prev = ins;
+  else lista.last = ins;
+  cur->next = ins;
+}
+
+void createCL(Elem*& head) {
+  head = nullptr;
+  int x = 0;
+  cout << "Insereaza elemente pana la 0: ";
+  cin >> x;
+  while (x) {
+    insertDataCL(head, x);
+    cin >> x;
   }
 }
 
-void displayDLL(DLList lista){
-  Elem* crntVal = lista.first; 
-  while (crntVal != nullptr){
-    std::cout << crntVal->data << " ";
-    crntVal = crntVal->next;
+void insertDataCL(Elem*& head, int val) {
+  Elem* ins = new Elem();
+  ins->data = val;
+
+  if (!head) {
+    ins->next = ins;
+    head = ins;
+    return;
   }
+
+  Elem* last = head;
+  while (last->next != head) {
+    last = last->next;
+  }
+
+  ins->next = head;
+  last->next = ins;
+  head = ins;
+}
+
+void insertCLToBack(Elem*& head, int val){
+  Elem* ins = new Elem();
+  ins->data = val;
+
+  if (!head) {
+    ins->next = ins;
+    head = ins;
+    return;
+  }
+
+  Elem* last = head;
+  while (last->next != head) {
+    last = last->next;
+  }
+
+  ins->next = head;
+  last->next = ins;
+}
+
+void displayCL(Elem* head) {
+  if (!head) {
+    cout << "Lista este goala!";
+    return;
+  }
+  Elem* p = head;
+  do {
+    cout << p->data << " ";
+    p = p->next;
+  } while (p != head);
+  cout << endl;
+}
+
+
+void reverseCL(Elem*& head) {
+  if (!head || head->next == head) return;
+
+  Elem* prev = head;
+  Elem* cur = head->next;
+  Elem* next;
+
+  do {
+    next = cur->next;
+    cur->next = prev;
+    prev = cur;
+    cur = next;
+  } while (cur != head);
+
+  head->next = prev;
+  head = prev;
+}
+
+void deleteCL(Elem*& head){
+  Elem* p = head;
+  do {
+    Elem* temp = p;
+    p = p->next;
+    delete temp;
+  } while (p != head);
+}
+
+void createCLS(ElemS*& head){
+  int n = 0;
+  std::string name;
+  std::cout << "Numarul persoanelor in cerc - ";
+  cin >> n;
+
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  for (int i = 0; i < n; i++) {
+    std::cout << "Numele persoanei " << i+1 << ": ";
+    std::getline(std::cin, name);
+    ElemS* ins = new ElemS();
+    ins->name = name;
+
+    if (!head) {
+      ins->next = ins;
+      head = ins;
+    } else {
+      ElemS* last = head;
+      while (last->next != head) {
+        last = last->next;
+      }
+
+      ins->next = head;
+      last->next = ins;
+      head = ins;
+    }
+  }
+}
+
+void displayCLS(ElemS* head){
+  ElemS* p = head;
+  do {
+    std::cout << p->name << " ";
+    p = p->next;
+  } while (p != head);
   std::cout << std::endl;
 }
 
-void createCL(Elem* &head){
-  int x;
-  std::cout << "Insert elements until 0 is inserted" << std::endl;
-  std::cin >> x;
-  while (x) {
-    insertDataCL(head, x);
-    std::cin >> x;
-  }
+void deleteCLS(ElemS*& head){
+  ElemS* p = head;
+  do {
+    ElemS* temp = p;
+    p = p->next;
+    delete temp;
+  } while (p != head);
 }
-
-void insertDataCL(Elem* &head, int val){
-  Elem *ins = new Elem();
-  ins->data = val;
-  if (head == nullptr) {
-    ins->next = ins;
-    head = ins;
-  } else {
-    ins->next = head->next;
-    head->next = ins;
-    head = ins;
-  }
-}
-
-void displayCL(Elem* head){
-  Elem* crntVal = head->next;
-  std::cout << head->data << " ";
-  while (crntVal != head) {
-    std::cout << crntVal->data << " ";
-    crntVal = crntVal->next;
-  }
-}
-
-bool srcVal(Elem* &head, int x){
-  bool found = false;
-  Elem* crntVal = head;
-  while (crntVal != nullptr) {
-    if (crntVal->data == x) {
-      found = true;
-      break;
-    } else {
-      crntVal = crntVal->next;
-    }
-  }
-  return found;
-}
-
-void insertOnPosDLL(Elem* head, int val, int pos){
-  if (head != nullptr) {
-    Elem* prevPos = head;
-    for (int i = 1; i < pos - 1; i++) {
-      prevPos = prevPos->next;
-    }
-    Elem* ins;
-    ins->data = val;
-    ins->prev = nullptr;
-    ins->next = prevPos->next;
-    head->prev = ins;
-    head = ins;
-    prevPos->next = ins;
-  } else {
-    std::cout << "Lista nu are date!";
-  }
-}
-
-void deleteOnPosDLL(Elem* head, int pos){
-  if (head != nullptr) {
-    Elem* prevPos = head;
-    for (int i = 0; i < pos - 2; i++) {
-      prevPos = prevPos->next;
-    }
-    (prevPos->next)->data = 0;
-    Elem* nextPos = (prevPos->next)->next;
-    prevPos->next = nextPos;
-    nextPos->prev = prevPos;
-  } else{
-    std::cout << "Lista nu are date!";
-  }
-}
-
-void srcKthFromBack(Elem* head, int k){
-  Elem* first = head;
-  Elem* second = head;
-
-  for (int i = 0; i < k; i++) {
-    first = first->next;
-  }
-
-  while (first->next != nullptr) {
-    first = first->next;
-    second = second->next;
-  }
-
-  std::cout << "Elementul k numarat din spate = " << second->data << std::endl;
-}
-
-void displayBothWays(Elem* head){
-  if (head == nullptr) {
-    std::cout << std::endl;
-    return;
-  }
-
-  std::cout << head->data << " ";
-  displayBothWays(head->next);
-  std::cout << head->data << " ";   
-
-  if (head == nullptr) {
-    std::cout << std::endl;
-    return;
-  }
-}
-
