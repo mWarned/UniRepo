@@ -11,8 +11,7 @@ int MENU_main() {
   std::cout << "=================================" << std::endl;
   std::cout << "1 - Test simple stack" << std::endl;
   std::cout << "2 - Test dynamic stack" << std::endl;
-  std::cout << "3 - Convert to postfix" << std::endl;
-  std::cout << "4 - Convert to prefix" << std::endl;
+  std::cout << "3 - Convert to postfix and prefix" << std::endl;
   std::cout << "0 - Exit" << std::endl;
   std::cout << "---------------------------------" << std::endl;
   std::cout << "\033[0m\n";

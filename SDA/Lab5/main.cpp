@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include "helper.h"
 #include "stacks.h"
 #include "expressions.h"
@@ -42,7 +43,6 @@ int main() {
       pushV(s, 1);
       pushV(s, 8);
       pushV(s, 9);
-      pushV(s, 10);
       cout << "-------------------------\n";
       cout << "Teste pentru stiva plina:" << endl;
       cout << "Este goala? - ";
@@ -95,6 +95,15 @@ int main() {
       pop(s);
       cout << top(s) << endl;
       clear(s);
+      rep = MENU_main();
+    } else if (rep == 3) {
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+      std::string expresia;
+      std::cout << "Introdu expresia - ";
+      std::getline(std::cin, expresia);
+
+      std::cout << "Expresia postfixata - " << infixToPostfix(expresia) << std::endl;
+      std::cout << "NU LUCREAZA | DE FIXAT Expresia prefixata - " << postfixToPrefix(infixToPostfix(expresia)) << std::endl;
       rep = MENU_main();
     } else {
       cout << "\033[1;31mAction number not in menu!\033[0m" << endl;
