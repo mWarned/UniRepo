@@ -2,15 +2,17 @@
 
 #include <string>
 
-struct CharNode {
-  char c;
-  CharNode* next;
+struct StringNode {
+  std::string str;
+  StringNode* next;
 };
-typedef CharNode* CharStack;
+typedef StringNode* StringStack;
 
-void pushC(CharStack&, char);
-void popC(CharStack&);
-char topC(CharStack&);
-bool isEmptyC(CharStack&);
+void pushS(StringStack&, const std::string&);
+void popS(StringStack&);
+std::string topS(StringStack&);
+bool isEmptyS(StringStack&);
+
 std::string infixToPostfix(const std::string&);
 std::string postfixToPrefix(const std::string&);
+

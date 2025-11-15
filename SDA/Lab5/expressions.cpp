@@ -1,32 +1,32 @@
 #include <iostream>
 #include "expressions.h"
 
-void pushC(CharStack& top, char value) {
-  CharNode* ins = new CharNode();
-  ins->c = value;
+void pushS(StringStack& top, const std::string& value) {
+  StringNode* ins = new StringNode();
+  ins->str = value;
   ins->next = top;
   top = ins;
 }
 
-void popC(CharStack& top) {
-  if (isEmptyC(top)) {
+void popS(StringStack& top) {
+  if (isEmptyS(top)) {
     std::cout << "Nu poti face pop() dintr-o stiva goala!" << std::endl;
   } else {
-    CharStack tmp = top;
+    StringStack tmp = top;
     top = top->next;
     delete tmp;
   }
 }
 
-char topC(CharStack& top) {
-  if (isEmptyC(top)) {
+std::string topS(StringStack& top) {
+  if (isEmptyS(top)) {
     std::cout << "Nu poti face top() dintr-o stiva goala!" << std::endl;
-    return 0;
+    return "";
   }
-  return top->c;
+  return top->str;
 }
 
-bool isEmptyC(CharStack& top){
+bool isEmptyS(StringStack& top){
   return top == nullptr;
 }
 
@@ -39,7 +39,7 @@ bool isdigit(char c){
 }
 
 std::string infixToPostfix(const std::string& infix) {
-  CharStack s = nullptr;
+  StringStack s = nullptr;
   std::string postfix = "";
 
   for (char c : infix) {
@@ -47,101 +47,57 @@ std::string infixToPostfix(const std::string& infix) {
       postfix += c;
     }
     else if (c == '(') {
-      pushC(s, c);
+      pushS(s, std::string(1, c));
     }
     else if (c == ')') {
-      while (!isEmptyC(s) && topC(s) != '(') {
-        postfix += topC(s);
-        popC(s);
+      while (!isEmptyS(s) && topS(s) != "(") {
+        postfix += topS(s);
+        popS(s);
       }
-      if (!isEmptyC(s)) popC(s);
+      if (!isEmptyS(s)) popS(s);
     }
     else if (c == '+' || c == '-' || c == '*' || c == '/') {
-      while (!isEmptyC(s) && topC(s) != '(') {
+      while (!isEmptyS(s) && topS(s) != "(") {
+        std::string topOp = topS(s);
         int crntOp = (c == '*' || c == '/') ? 2 : 1;
-        int prevOp = (topC(s) == '*' || topC(s) == '/') ? 2 : 1;
+        int prevOp = (topOp == "*" || topOp == "/") ? 2 : 1;
         if (crntOp <= prevOp) {
-          postfix += topC(s);
-          popC(s);
+          postfix += topS(s);
+          popS(s);
         } else {
           break;
         }
       }
-      pushC(s, c);
+      pushS(s, std::string(1, c));
     }
   }
 
-  while (!isEmptyC(s)) {
-    postfix += topC(s);
-    popC(s);
+  while (!isEmptyS(s)) {
+    postfix += topS(s);
+    popS(s);
   }
 
   return postfix;
 }
 
 std::string postfixToPrefix(const std::string& postfix) {
-    CharStack s = nullptr;
-
-    for (char c : postfix) {
-        if (std::isdigit(static_cast<unsigned char>(c))) {
-            pushC(s, c);
-            pushC(s, '\0');
-        }
-        else if (c == '+' || c == '-' || c == '*' || c == '/') {
-            if (isEmptyC(s) || isEmptyC(s->next) || topC(s) != '\0') {
-                std::cout << "Expresie postfix invalida!\n";
-                while (!isEmptyC(s)) popC(s);
-                return "";
-            }
-
-            popC(s);
-            std::string op2;
-            while (!isEmptyC(s) && topC(s) != '\0') {
-                op2 = topC(s) + op2;
-                popC(s);
-            }
-            if (!isEmptyC(s)) popC(s);
-
-            if (isEmptyC(s) || topC(s) != '\0') {
-                std::cout << "Expresie postfix invalida!\n";
-                while (!isEmptyC(s)) popC(s);
-                return "";
-            }
-            popC(s);
-            std::string op1;
-            while (!isEmptyC(s) && topC(s) != '\0') {
-                op1 = topC(s) + op1;
-                popC(s);
-            }
-            if (!isEmptyC(s)) popC(s);
-
-            std::string result = c + op1 + op2;
-
-            for (char ch : result) {
-                pushC(s, ch);
-            }
-            pushC(s, '\0');
-        }
+  StringStack s = nullptr;
+  
+  for (char c : postfix) {
+    if (isdigit(c)) {
+      pushS(s, std::string(1, c));
     }
-
-    if (isEmptyC(s) || topC(s) != '\0') {
-        std::cout << "Expresie  invalida!\n";
-        while (!isEmptyC(s)) popC(s);
-        return "";
+    else if (c == '+' || c == '-' || c == '*' || c == '/') {
+      std::string op1 = topS(s); popS(s);
+      std::string op2 = topS(s); popS(s);
+      
+      std::string prefix = std::string(1, c) + op2 + op1;
+      
+      pushS(s, prefix);
     }
-
-    popC(s);
-    std::string result;
-    while (!isEmptyC(s)) {
-        result = topC(s) + result;
-        popC(s);
-    }
-
-    if (!isEmptyC(s)) {
-        std::cout << "Expresie postfix invalida!\n";
-        while (!isEmptyC(s)) popC(s);
-        return "";
-    }
-
-    return result;
+  }
+  
+  std::string result = topS(s);
+  popS(s);
+  return result;
 }

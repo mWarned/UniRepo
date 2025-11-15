@@ -103,7 +103,7 @@ int main() {
       std::getline(std::cin, expresia);
 
       std::cout << "Expresia postfixata - " << infixToPostfix(expresia) << std::endl;
-      std::cout << "NU LUCREAZA | DE FIXAT Expresia prefixata - " << postfixToPrefix(infixToPostfix(expresia)) << std::endl;
+      std::cout << "Expresia prefixata - " << postfixToPrefix(infixToPostfix(expresia)) << std::endl;
       rep = MENU_main();
     } else {
       cout << "\033[1;31mAction number not in menu!\033[0m" << endl;
